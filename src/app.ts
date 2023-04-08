@@ -1,8 +1,13 @@
 import express, {Express} from 'express';
 import morgan from 'morgan';
+import connectDB from './db/mongoDb';
 
+
+connectDB();
 
 const app:Express = express();
+
+
 
 app.use(morgan("combined"))
 
