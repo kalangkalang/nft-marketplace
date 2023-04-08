@@ -1,3 +1,22 @@
 ### Make sure server is running
 
 GET http://localhost:3000/
+
+### Get all of the list of products
+
+GET http://localhost:3000/product
+
+### Create a new product
+
+POST http://localhost:3000/product
+Content-Type: application/json
+
+{
+  "product_name": "Mac Book Pro 2",
+  "price": 4999,
+  "quantity":1,
+  "description": "This is an apple product",
+  "reputation": 600,
+  "availability": 1,
+  "created_by": "Wisma Chaerul"
+}

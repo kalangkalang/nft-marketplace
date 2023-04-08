@@ -5,8 +5,9 @@ export interface IProduct extends Document {
     price: number;
     quantity: number;
     description: string;
-    reputation: string;
-    availibility: number;
+    reputation: number;
+    reputation_status: string;
+    availability: number;
     categories: string[];
     created_at: Date;
     modified_at: Date;
