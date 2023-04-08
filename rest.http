@@ -20,3 +20,7 @@ Content-Type: application/json
   "availability": 1,
   "created_by": "Wisma Chaerul"
 }
+
+### Get Product by its ID
+GET http://localhost:3000/product/64318f26c3355bfb14648647
+

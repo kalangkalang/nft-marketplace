@@ -21,7 +21,7 @@ async function getAllItem(): Promise<IProduct[]> {
 export const createProduct = async (req:Request, res:Response, next:NextFunction) => {
     try {
         
-        const { product_name, price, description,  quantity, reputation, availability, created_by } = req.body();
+        const { product_name, price, description,  quantity, reputation, availability, created_by } = req.body;
         
         const reputation_status = getRatingStatus(reputation);
         const created_at = new Date(new Date().getTime());
