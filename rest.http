@@ -24,3 +24,6 @@ Content-Type: application/json
 ### Get Product by its ID
 GET http://localhost:3000/product/64318f26c3355bfb14648647
 
+
+### Delete a product by its ID
+DELETE http://localhost:3000/product/64318b7bc3355bfb14648644

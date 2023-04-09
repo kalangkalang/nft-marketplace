@@ -13,13 +13,13 @@ app.use(morgan("combined"));
 
 
 app.set('port', process.env.PORT || 3000);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', (req, res, next) => {
     res.json({message: "The server is running"});
 })
-
 app.use('/product', ProductRouter);
 
 export default app;
