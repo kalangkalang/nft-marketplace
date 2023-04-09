@@ -24,6 +24,14 @@ Content-Type: application/json
 ### Get Product by its ID
 GET http://localhost:3000/product/64318f26c3355bfb14648647
 
+### Patch a product 
+PATCH http://localhost:3000/product/64319bff267b4ad51ddfb318
+Content-Type: application/json
+
+{
+    "quantity":15
+}
 
 ### Delete a product by its ID
 DELETE http://localhost:3000/product/64318b7bc3355bfb14648644
+

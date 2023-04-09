@@ -99,9 +99,10 @@ const updateProduct = async (req: Request, res: Response, next: NextFunction) =>
         if (reputation_status) {
             updatedProduct.reputation_status = reputation_status;
         }
+        updatedProduct.modified_at = new Date(new Date().getTime()); 
 
-        const newProduct: IProduct | null = await updateItem(id, updatedProduct);
         
+        const newProduct: IProduct | null = await updateItem(id, updatedProduct);
         if (!newProduct) {
             return res.status(404).send();
         }
