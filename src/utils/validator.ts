@@ -1,10 +1,10 @@
-import { body } from 'express-validator';
+import { body, ValidationChain } from 'express-validator';
 
 
 const forbiddenWordsRegex = /(gay|lesbian|sex)/i;
 const allowedCategoriesRegex = /(photo|sketch|cartoon|animation)/i;
 
-const createProductValidator = [
+const createProductValidator: ValidationChain[] = [
     body('product_name').notEmpty().isString().trim().isLength({min: 10}).custom((value) => {
         if (forbiddenWordsRegex.test(value)) {
             throw new Error('Text contains forbidden words');

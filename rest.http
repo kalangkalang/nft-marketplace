@@ -12,11 +12,14 @@ POST http://localhost:3000/product
 Content-Type: application/json
 
 {
-  "product_name": "Mac Book Pro 2",
-  "price": 4999,
+  "product_name": "Dori Sangat Bagus",
+  "price": 10000,
+  "image_url": "www.samsul.com",
+  "categories": "cartoon",
+  "rating": 1,
   "quantity":1,
   "description": "This is an apple product",
-  "reputation": 600,
+  "reputation": 800,
   "availability": 1,
   "created_by": "Wisma Chaerul"
 }

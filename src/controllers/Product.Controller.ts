@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { IProduct } from "../models/IProduct";
 import { ItemModel } from "../models/ProductSchema";
+import { validationResult } from 'express-validator';
 import Util from "../utils/Util";
 
 async function createItem(item: IProduct): Promise<IProduct> {
@@ -29,7 +30,11 @@ async function updateItem(id: string, item: Partial<IProduct>): Promise<IProduct
 
 const createProduct = async (req:Request, res:Response, next:NextFunction) => {
     try {
-        
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
         const { product_name, price, image_url, description, categories, quantity, reputation, availability, created_by } = req.body;
         
         const reputation_status = Util.getRatingStatus(reputation);
