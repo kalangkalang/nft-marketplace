@@ -7,3 +7,7 @@ How to Run
     - docker compose build
 2. After build process is finished, run the docker image by executing this command
     - docker compose up
+
+# Notes
+- I only create validator for create product API
+- Actually i create it in validator.ts, 
