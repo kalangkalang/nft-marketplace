@@ -4,11 +4,13 @@ export interface IProduct extends Document {
     product_name: string;
     price: number;
     quantity: number;
+    rating: number;
+    image_url: string;
     description: string;
     reputation: number;
     reputation_status: string;
     availability: number;
-    categories: string[];
+    categories: string;
     created_at: Date;
     modified_at: Date;
     created_by: string;

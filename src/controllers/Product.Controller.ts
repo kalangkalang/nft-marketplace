@@ -30,18 +30,18 @@ async function updateItem(id: string, item: Partial<IProduct>): Promise<IProduct
 const createProduct = async (req:Request, res:Response, next:NextFunction) => {
     try {
         
-        const { product_name, price, description,  quantity, reputation, availability, created_by } = req.body;
+        const { product_name, price, image_url, description, categories, quantity, reputation, availability, created_by } = req.body;
         
         const reputation_status = Util.getRatingStatus(reputation);
         const created_at = new Date(new Date().getTime());
-        const modified_at = new Date(new Date().getTime()); 
-        const categories = new Array<string>();
+        const modified_at = new Date(new Date().getTime());
 
         const newProduct: IProduct  = new ItemModel({
             product_name,
             price,
             quantity,
             description,
+            image_url,
             reputation,
             reputation_status,
             availability,
