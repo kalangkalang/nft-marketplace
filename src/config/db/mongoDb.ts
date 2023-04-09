@@ -7,10 +7,9 @@ const connectDB = async() => {
     const mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/marketplace';
     mongoose.Promise = bluebird;
     mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true } as MongooseOptions ).then(
-        () => { console.log('Connected to Database - '); },
+        () => { console.log('Connected to Database First Time'); },
     ).catch(err => {
         console.log(`MongoDB connection error. Please make sure MongoDB is running. ${err}`);
-        // process.exit();
     });
 
     mongoose.connection.on('connected', () => {

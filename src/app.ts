@@ -1,6 +1,6 @@
 import express, {Express} from 'express';
 import morgan from 'morgan';
-import connectDB from './db/mongoDb';
+import connectDB from './config/db/mongoDb';
 import ProductRouter from './routes/Product.route';
 
 connectDB();
