@@ -1,9 +1,29 @@
-version: "3.5"
+version: "3.9"
 
 services:
-  mongo:
-    container_name: mongo
+  # Database Service
+  mongo_db:
+    container_name: mongo_container
     image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/db
     ports:
       - 27017:27017
     command: mongod
+  
+  # Server service
+  api:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/user/src/app
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://mongo_db:27017/marketplace
+    depends_on:
+      - mongo_db
+
+volumes:
+  mongo_db: {}
